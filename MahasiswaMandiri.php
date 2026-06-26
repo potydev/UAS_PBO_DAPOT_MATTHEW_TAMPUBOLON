@@ -46,7 +46,7 @@ class MahasiswaMandiri extends Mahasiswa {
 
     // Implementasi abstract methods
     public function hitungTagihanSemester() {
-        return $this->tarifUktNominal;
+        return (float)$this->tarifUktNominal + 100000;
     }
 
     public function tampilkanSpesifikasiAkademik() {
