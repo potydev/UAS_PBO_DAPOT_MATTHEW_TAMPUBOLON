@@ -288,6 +288,13 @@ tr:hover td {
     border-radius: 6px;
     font-size: 0.82rem;
     color: #475569;
+    white-space: nowrap;
+}
+
+.spec-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 /* Animations */

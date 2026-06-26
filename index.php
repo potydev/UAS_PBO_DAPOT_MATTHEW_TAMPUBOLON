@@ -138,7 +138,20 @@ foreach ($prestasiList as $m) {
                                         <td class="text-center"><?= htmlspecialchars($m->getSemester()) ?></td>
                                         <td class="text-right">Rp <?= number_format($m->getTarifUktNominal(), 0, ',', '.') ?></td>
                                         <td class="text-right text-bold text-highlight-mandiri">Rp <?= number_format($m->hitungTagihanSemester(), 0, ',', '.') ?></td>
-                                        <td><span class="tag-spec"><?= htmlspecialchars($m->tampilkanSpesifikasiAkademik()) ?></span></td>
+                                        <td>
+                                            <div class="spec-container">
+                                                <?php 
+                                                $specs = explode(', ', $m->tampilkanSpesifikasiAkademik());
+                                                foreach ($specs as $spec): 
+                                                    $parts = explode(': ', $spec, 2);
+                                                    if (count($parts) === 2): ?>
+                                                        <span class="tag-spec"><strong><?= htmlspecialchars($parts[0]) ?>:</strong> <?= htmlspecialchars($parts[1]) ?></span>
+                                                    <?php else: ?>
+                                                        <span class="tag-spec"><?= htmlspecialchars($spec) ?></span>
+                                                    <?php endif;
+                                                endforeach; ?>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <?php endforeach; 
                             endif; ?>
@@ -183,7 +196,20 @@ foreach ($prestasiList as $m) {
                                         <td class="text-center"><?= htmlspecialchars($m->getSemester()) ?></td>
                                         <td class="text-right">Rp <?= number_format($m->getTarifUktNominal(), 0, ',', '.') ?></td>
                                         <td class="text-right text-bold text-highlight-bidikmisi">Rp <?= number_format($m->hitungTagihanSemester(), 0, ',', '.') ?></td>
-                                        <td><span class="tag-spec"><?= htmlspecialchars($m->tampilkanSpesifikasiAkademik()) ?></span></td>
+                                        <td>
+                                            <div class="spec-container">
+                                                <?php 
+                                                $specs = explode(', ', $m->tampilkanSpesifikasiAkademik());
+                                                foreach ($specs as $spec): 
+                                                    $parts = explode(': ', $spec, 2);
+                                                    if (count($parts) === 2): ?>
+                                                        <span class="tag-spec"><strong><?= htmlspecialchars($parts[0]) ?>:</strong> <?= htmlspecialchars($parts[1]) ?></span>
+                                                    <?php else: ?>
+                                                        <span class="tag-spec"><?= htmlspecialchars($spec) ?></span>
+                                                    <?php endif;
+                                                endforeach; ?>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <?php endforeach; 
                             endif; ?>
@@ -228,7 +254,20 @@ foreach ($prestasiList as $m) {
                                         <td class="text-center"><?= htmlspecialchars($m->getSemester()) ?></td>
                                         <td class="text-right">Rp <?= number_format($m->getTarifUktNominal(), 0, ',', '.') ?></td>
                                         <td class="text-right text-bold text-highlight-prestasi">Rp <?= number_format($m->hitungTagihanSemester(), 0, ',', '.') ?></td>
-                                        <td><span class="tag-spec"><?= htmlspecialchars($m->tampilkanSpesifikasiAkademik()) ?></span></td>
+                                        <td>
+                                            <div class="spec-container">
+                                                <?php 
+                                                $specs = explode(', ', $m->tampilkanSpesifikasiAkademik());
+                                                foreach ($specs as $spec): 
+                                                    $parts = explode(': ', $spec, 2);
+                                                    if (count($parts) === 2): ?>
+                                                        <span class="tag-spec"><strong><?= htmlspecialchars($parts[0]) ?>:</strong> <?= htmlspecialchars($parts[1]) ?></span>
+                                                    <?php else: ?>
+                                                        <span class="tag-spec"><?= htmlspecialchars($spec) ?></span>
+                                                    <?php endif;
+                                                endforeach; ?>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <?php endforeach; 
                             endif; ?>
