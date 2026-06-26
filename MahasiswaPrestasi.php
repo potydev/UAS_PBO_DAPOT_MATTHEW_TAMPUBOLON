@@ -41,7 +41,25 @@ class MahasiswaPrestasi extends Mahasiswa {
                 $row['minimal_ipk_syarat']
             );
         }
-        return null;
+    }
+
+    // Method query to get all Mahasiswa Prestasi
+    public static function getAll() {
+        $db = Database::connect();
+        $stmt = $db->query("SELECT * FROM tabel_mahasiswa WHERE jenis_pembiayaan = 'Prestasi'");
+        $results = [];
+        while ($row = $stmt->fetch()) {
+            $results[] = new self(
+                $row['id_mahasiswa'],
+                $row['nama_mahasiswa'],
+                $row['nim'],
+                $row['semester'],
+                $row['tarif_ukt_nominal'],
+                $row['nama_instansi_beasiswa'],
+                $row['minimal_ipk_syarat']
+            );
+        }
+        return $results;
     }
 
     // Implementasi abstract methods

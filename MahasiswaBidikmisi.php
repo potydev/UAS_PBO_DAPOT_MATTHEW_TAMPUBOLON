@@ -41,7 +41,25 @@ class MahasiswaBidikmisi extends Mahasiswa {
                 $row['dana_saku_subsidi']
             );
         }
-        return null;
+    }
+
+    // Method query to get all Mahasiswa Bidikmisi
+    public static function getAll() {
+        $db = Database::connect();
+        $stmt = $db->query("SELECT * FROM tabel_mahasiswa WHERE jenis_pembiayaan = 'Bidikmisi'");
+        $results = [];
+        while ($row = $stmt->fetch()) {
+            $results[] = new self(
+                $row['id_mahasiswa'],
+                $row['nama_mahasiswa'],
+                $row['nim'],
+                $row['semester'],
+                $row['tarif_ukt_nominal'],
+                $row['nomor_kip_kuliah'],
+                $row['dana_saku_subsidi']
+            );
+        }
+        return $results;
     }
 
     // Implementasi abstract methods
